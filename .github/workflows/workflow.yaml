@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -f pom.xml clean package
 
       - name: Run unit tests
         run: mvn test --file pom.xml
