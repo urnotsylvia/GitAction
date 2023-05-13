@@ -32,8 +32,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: urnotsylvia/sylvia:latest
+        run: docker build . --file Dockerfile --tag urnotsylvia/sylvia:latest
+#        uses: docker/build-push-action@v2
+#        with:
+#          context: .
+#          push: true
+#          tags: urnotsylvia/sylvia:latest
